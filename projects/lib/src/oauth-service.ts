@@ -1,29 +1,29 @@
-import { Injectable, NgZone, Optional, OnDestroy, Inject } from '@angular/core';
+import { Inject, Injectable, NgZone, OnDestroy, Optional } from '@angular/core';
 import {
   HttpClient,
+  HttpErrorResponse,
   HttpHeaders,
-  HttpParams,
-  HttpErrorResponse
+  HttpParams
 } from '@angular/common/http';
 import {
+  combineLatest,
+  from,
   Observable,
-  Subject,
-  Subscription,
   of,
   race,
-  from,
-  combineLatest,
+  Subject,
+  Subscription,
   throwError
 } from 'rxjs';
 import {
-  filter,
+  catchError,
+  debounceTime,
   delay,
+  filter,
   first,
-  tap,
   map,
   switchMap,
-  debounceTime,
-  catchError
+  tap
 } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 
@@ -33,17 +33,17 @@ import {
 } from './token-validation/validation-handler';
 import { UrlHelperService } from './url-helper.service';
 import {
+  OAuthErrorEvent,
   OAuthEvent,
   OAuthInfoEvent,
-  OAuthErrorEvent,
   OAuthSuccessEvent
 } from './events';
 import {
+  LoginOptions,
   OAuthLogger,
   OAuthStorage,
-  LoginOptions,
-  ParsedIdToken,
   OidcDiscoveryDoc,
+  ParsedIdToken,
   TokenResponse,
   UserInfo
 } from './types';
@@ -528,7 +528,9 @@ export class OAuthService extends AuthConfig implements OnDestroy {
           this.logoutUrl = doc.end_session_endpoint || this.logoutUrl;
           this.grantTypesSupported = doc.grant_types_supported;
           this.issuer = doc.issuer;
-          this.tokenEndpoint = doc.token_endpoint;
+          this.tokenEndpoint = this.tokenEndpoint
+            ? this.tokenEndpoint
+            : doc.token_endpoint;
           this.userinfoEndpoint =
             doc.userinfo_endpoint || this.userinfoEndpoint;
           this.jwksUri = doc.jwks_uri;
@@ -2154,8 +2156,8 @@ export class OAuthService extends AuthConfig implements OnDestroy {
           idTokenExpiresAt: expiresAtMSec
         };
         if (atHashCheckEnabled) {
-          return this.checkAtHash(validationParams).then(atHashValid => {
-            if (this.requestAccessToken && !atHashValid) {
+          return this.checkAtHash(validationParams).then(atHashValid1 => {
+            if (this.requestAccessToken && !atHashValid1) {
               const err = 'Wrong at_hash';
               this.logger.warn(err);
               return Promise.reject(err);
