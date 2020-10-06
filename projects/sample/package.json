@@ -1,5 +1,5 @@
 {
-  "name": "angular-oauth2-oidc",
+  "name": "sample",
   "license": "MIT",
   "author": {
     "name": "Diego Auyon"
@@ -13,7 +13,8 @@
     "@angular/common": ">=10.0.1",
     "@angular/core": ">=10.0.1",
     "@angular/compiler": ">=10.0.1"
-  },
+  }
+,
   "dependencies": {
     "tslib": "^2.0.0"
   }

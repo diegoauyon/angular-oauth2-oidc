@@ -10,8 +10,8 @@
     "url": "https://github.com/diegoauyon/angular-oauth2-oidc.git"
   },
   "peerDependencies": {
-    "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0"
+    "@angular/common": ">=10.0.4",
+    "@angular/core": ">=10.0.4"
   },
   "dependencies": {
     "tslib": "^2.0.0"
