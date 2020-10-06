@@ -3,7 +3,7 @@ const path = require('path')
 const markdownMagic = require('markdown-magic')
 
 const config = {
-  repo: 'manfredsteyer/angular-oauth-oidc',
+  repo: 'diegoauyon/angular-oauth-oidc',
   transforms: {
     CONTRIBUTORS: require('markdown-magic-github-contributors')
   }
