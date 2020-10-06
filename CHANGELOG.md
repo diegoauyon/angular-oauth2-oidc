@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.1.1](https://github.com/diegoauyon/angular-oauth2-oidc/compare/v10.1.0...v10.1.1) (2020-10-06)
+
+
+### Bug Fixes
+
+* don't override tokenUrl if setted even if defines by JWKS ([91b1183](https://github.com/diegoauyon/angular-oauth2-oidc/commit/91b11839324229b6504384559fd8f6e8d00834f2))
+
 ## 10.1.0 (2020-10-01)
 
 
