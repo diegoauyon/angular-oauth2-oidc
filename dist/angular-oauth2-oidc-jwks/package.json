@@ -1,0 +1,40 @@
+{
+  "name": "@diegoauyon/angular-oauth2-oidc-jwks",
+  "version": "10.2.1",
+  "dependencies": {
+    "jsrsasign": "^8.0.12",
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/angular-oauth2-oidc-jwks.umd.js",
+  "module": "fesm2015/angular-oauth2-oidc-jwks.js",
+  "es2015": "fesm2015/angular-oauth2-oidc-jwks.js",
+  "esm2015": "esm2015/angular-oauth2-oidc-jwks.js",
+  "fesm2015": "fesm2015/angular-oauth2-oidc-jwks.js",
+  "typings": "angular-oauth2-oidc-jwks.d.ts",
+  "metadata": "angular-oauth2-oidc-jwks.metadata.json",
+  "sideEffects": false,
+  "description": "`JwksValidationHandler` for `angular-oauth2-odic`. Only needed for implicit flow.",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegoauyon/angular-oauth2-oidc.git"
+  },
+  "keywords": [
+    "angular",
+    "oauth2",
+    "oidc",
+    "jwks",
+    "diegoauyon"
+  ],
+  "author": "Diego Auyon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegoauyon/angular-oauth2-oidc/issues"
+  },
+  "homepage": "https://github.com/diegoauyon/angular-oauth2-oidc#readme"
+}

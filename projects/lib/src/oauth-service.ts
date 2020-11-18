@@ -199,6 +199,8 @@ export class OAuthService extends AuthConfig implements OnDestroy {
   }
 
   protected restartRefreshTimerIfStillLoggedIn(): void {
+    this.clearAccessTokenTimer();
+    this.clearIdTokenTimer();
     this.setupExpirationTimers();
   }
 

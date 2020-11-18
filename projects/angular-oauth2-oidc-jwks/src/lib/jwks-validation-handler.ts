@@ -2,7 +2,7 @@ import * as rs from 'jsrsasign';
 import {
   AbstractValidationHandler,
   ValidationParams
-} from 'angular-oauth2-oidc';
+} from '@diegoauyon/angular-oauth2-oidc';
 
 /**
  * Validates the signature of an id_token against one
