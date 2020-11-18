@@ -1032,6 +1032,8 @@ class OAuthService extends AuthConfig {
         }
     }
     restartRefreshTimerIfStillLoggedIn() {
+        this.clearAccessTokenTimer();
+        this.clearIdTokenTimer();
         this.setupExpirationTimers();
     }
     setupSessionCheck() {

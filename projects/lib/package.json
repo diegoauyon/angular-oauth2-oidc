@@ -4,7 +4,7 @@
   "author": {
     "name": "Diego Auyon"
   },
-  "version": "10.2.1",
+  "version": "10.2.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/diegoauyon/angular-oauth2-oidc.git"

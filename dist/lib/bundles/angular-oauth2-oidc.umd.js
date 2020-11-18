@@ -1407,6 +1407,8 @@
             }
         };
         OAuthService.prototype.restartRefreshTimerIfStillLoggedIn = function () {
+            this.clearAccessTokenTimer();
+            this.clearIdTokenTimer();
             this.setupExpirationTimers();
         };
         OAuthService.prototype.setupSessionCheck = function () {
